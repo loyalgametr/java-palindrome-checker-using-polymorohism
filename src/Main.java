@@ -9,20 +9,19 @@ public class Main {
         // get string
         System.out.println("Please enter a number to check: ");
         String taken_string = scan.nextLine();
-
-        BasePall isPalindrome = new IfPalindrome(taken_string);
+        // usage of polymorphism
+        BasePall isPalindrome = new IfPalindrome();
         // give result
-        System.out.println(isPalindrome.Checker("anything"));
+        System.out.println(isPalindrome.Checker(taken_string));
 
     }
 
 }
 
 class BasePall {
-    // below ones are just for initializations
+
     // nothing to do with this
-    BasePall(String str){}
-    // nothing to do with this
+    // just for polymorphism
     public String Checker(String stt){
 
         return "false";
@@ -32,16 +31,10 @@ class BasePall {
 
 class IfPalindrome extends BasePall{
 
-    String str;
-    IfPalindrome(String str){
-        super(str);
-        this.str = str;
-    }
-
 
     // check if there is a palindrome number
     @Override
-    public String Checker(String srr){
+    public String Checker(String str){
         int char1;
         int char2;
         int length = str.length();
