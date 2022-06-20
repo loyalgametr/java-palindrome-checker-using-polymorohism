@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Main {
 
     public static void main(String[] args) {
@@ -30,7 +29,6 @@ class BasePall {
 }
 
 class IfPalindrome extends BasePall{
-
 
     // check if there is a palindrome number
     @Override
