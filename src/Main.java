@@ -11,7 +11,7 @@ public class Main {
         // usage of polymorphism
         BasePall isPalindrome = new IfPalindrome();
         // give result
-        System.out.println(isPalindrome.Checker(taken_string));
+        System.out.println(isPalindrome.checker(taken_string));
 
     }
 
@@ -21,7 +21,7 @@ class BasePall {
 
     // nothing to do with this
     // just for polymorphism
-    public String Checker(String stt){
+    public String checker(String stt){
 
         return "false";
     }
@@ -32,7 +32,7 @@ class IfPalindrome extends BasePall{
 
     // check if there is a palindrome number
     @Override
-    public String Checker(String str){
+    public String checker(String str){
         int char1;
         int char2;
         int length = str.length();
