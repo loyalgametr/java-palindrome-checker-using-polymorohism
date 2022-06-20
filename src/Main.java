@@ -1,17 +1,27 @@
 import java.util.Scanner;
 
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        // get string
+        System.out.println("Please enter a number to check: ");
+        String taken_string = scan.nextLine();
+
+        BasePall isPalindrome = new IfPalindrome(taken_string);
+        // give result
+        System.out.println(isPalindrome.Checker("anything"));
+
+    }
+
+}
+
 class BasePall {
     // below ones are just for initializations
-    int number;
     // nothing to do with this
     BasePall(String str){}
-
-    String str;
-    // nothing to do with this
-    public boolean Checker(){
-
-        return false;
-    }
     // nothing to do with this
     public String Checker(String stt){
 
@@ -20,36 +30,17 @@ class BasePall {
 
 }
 
-class ifPalindrome extends BasePall{
+class IfPalindrome extends BasePall{
 
-    ifPalindrome(String str){
+    String str;
+    IfPalindrome(String str){
         super(str);
         this.str = str;
     }
-    String str;
-    int num;
-    @Override
-    public boolean Checker(){
-            // get length of string
-            int length = str.length();
-            int count = 0;
-            // check there is palindrome number
-            boolean bool = true;
-            // get info about ascii codes of chars
-            while (count < (int) ((length + 1) / 2)) {
-                int opp = length - count - 1;
 
-                if (str.charAt(count) != str.charAt(opp)) {
-                    bool = false;
-                    return bool;
-                }
-                count += 1;
-            }
 
-            return bool;
-
-    }
     // check if there is a palindrome number
+    @Override
     public String Checker(String srr){
         int char1;
         int char2;
@@ -57,10 +48,10 @@ class ifPalindrome extends BasePall{
         int count = 0;
         boolean bool = true;
 
-        while (count < (int) ((length + 1) / 2)) {
+        while (count <  ((length + 1) / 2)) {
             int opp = length - count - 1;
-            char1 = (int) str.charAt(count);
-            char2 = (int) str.charAt(opp);
+            char1 = str.charAt(count);
+            char2 = str.charAt(opp);
 
             if ((((char1<58)&&(char1>47)) && ((char2<58)&&(char2>47)))){
                 if (char1 != char2) {
@@ -70,7 +61,7 @@ class ifPalindrome extends BasePall{
                 }
 
             }else{
-                return "It is not an integer!!";
+                return "It is not a number! It is a string!";
 
             }
 
@@ -78,28 +69,10 @@ class ifPalindrome extends BasePall{
         }
 
         if (!bool){
-            return "It is not a pallindrom number!!";
+            return "It is not a palindrome number!!";
         }
-        return "It is a pallindrom number";
+        return "It is a palindrome number!!";
     }
 
 }
 
-
-public class Main {
-
-    public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
-        // get input
-        System.out.println("Please input a number to check: ");
-        String inputt = scan.nextLine();
-
-        BasePall isPallindrom = new ifPalindrome(inputt);
-        // give result
-        System.out.println(isPallindrom.Checker("anything"));
-
-
-    }
-
-}
